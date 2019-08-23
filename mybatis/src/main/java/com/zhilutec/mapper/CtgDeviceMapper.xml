@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhilutec.dao.CtgDeviceMapper">
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgDevice">
+    <id column="dev_id" jdbcType="VARCHAR" property="devId" />
+    <result column="dev_sn" jdbcType="VARCHAR" property="sn" />
+    <result column="dev_type" jdbcType="TINYINT" property="type" />
+    <result column="ven_id" jdbcType="VARCHAR" property="venId" />
+    <result column="dev_model" jdbcType="VARCHAR" property="model" />
+    <result column="dev_location" jdbcType="VARCHAR" property="location" />
+    <result column="dev_install_time" jdbcType="TIMESTAMP" property="installTime" />
+    <result column="dev_maintainer" jdbcType="VARCHAR" property="maintainer" />
+    <result column="dev_phone" jdbcType="VARCHAR" property="phone" />
+    <result column="dev_factors" jdbcType="VARCHAR" property="factors" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="dev_activity" jdbcType="TINYINT" property="activity" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    dev_id, dev_sn, dev_type, ven_id, dev_model, dev_location, dev_install_time, dev_maintainer, 
+    dev_phone, dev_factors, gmt_created, gmt_modified, dev_activity
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgDeviceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_device
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ctg_device
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgDeviceExample">
+    delete from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgDevice">
+    insert into ctg_device (dev_id, dev_sn, dev_type, 
+      ven_id, dev_model, dev_location, 
+      dev_install_time, dev_maintainer, dev_phone, 
+      dev_factors, gmt_created, gmt_modified, 
+      dev_activity)
+    values (#{devId,jdbcType=VARCHAR}, #{sn,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, 
+      #{venId,jdbcType=VARCHAR}, #{model,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{installTime,jdbcType=TIMESTAMP}, #{maintainer,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{factors,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{activity,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgDevice">
+    insert into ctg_device
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="devId != null">
+        dev_id,
+      </if>
+      <if test="sn != null">
+        dev_sn,
+      </if>
+      <if test="type != null">
+        dev_type,
+      </if>
+      <if test="venId != null">
+        ven_id,
+      </if>
+      <if test="model != null">
+        dev_model,
+      </if>
+      <if test="location != null">
+        dev_location,
+      </if>
+      <if test="installTime != null">
+        dev_install_time,
+      </if>
+      <if test="maintainer != null">
+        dev_maintainer,
+      </if>
+      <if test="phone != null">
+        dev_phone,
+      </if>
+      <if test="factors != null">
+        dev_factors,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="activity != null">
+        dev_activity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="devId != null">
+        #{devId,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="venId != null">
+        #{venId,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null">
+        #{installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainer != null">
+        #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="factors != null">
+        #{factors,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activity != null">
+        #{activity,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgDeviceExample" resultType="java.lang.Integer">
+    select count(*) from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_device
+    <set>
+      <if test="record.devId != null">
+        dev_id = #{record.devId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sn != null">
+        dev_sn = #{record.sn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        dev_type = #{record.type,jdbcType=TINYINT},
+      </if>
+      <if test="record.venId != null">
+        ven_id = #{record.venId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.model != null">
+        dev_model = #{record.model,jdbcType=VARCHAR},
+      </if>
+      <if test="record.location != null">
+        dev_location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.installTime != null">
+        dev_install_time = #{record.installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.maintainer != null">
+        dev_maintainer = #{record.maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        dev_phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.factors != null">
+        dev_factors = #{record.factors,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmtCreated != null">
+        gmt_created = #{record.gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null">
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.activity != null">
+        dev_activity = #{record.activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_device
+    set dev_id = #{record.devId,jdbcType=VARCHAR},
+      dev_sn = #{record.sn,jdbcType=VARCHAR},
+      dev_type = #{record.type,jdbcType=TINYINT},
+      ven_id = #{record.venId,jdbcType=VARCHAR},
+      dev_model = #{record.model,jdbcType=VARCHAR},
+      dev_location = #{record.location,jdbcType=VARCHAR},
+      dev_install_time = #{record.installTime,jdbcType=TIMESTAMP},
+      dev_maintainer = #{record.maintainer,jdbcType=VARCHAR},
+      dev_phone = #{record.phone,jdbcType=VARCHAR},
+      dev_factors = #{record.factors,jdbcType=VARCHAR},
+      gmt_created = #{record.gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      dev_activity = #{record.activity,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgDevice">
+    update ctg_device
+    <set>
+      <if test="sn != null">
+        dev_sn = #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        dev_type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="venId != null">
+        ven_id = #{venId,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        dev_model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        dev_location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null">
+        dev_install_time = #{installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainer != null">
+        dev_maintainer = #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        dev_phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="factors != null">
+        dev_factors = #{factors,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activity != null">
+        dev_activity = #{activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgDevice">
+    update ctg_device
+    set dev_sn = #{sn,jdbcType=VARCHAR},
+      dev_type = #{type,jdbcType=TINYINT},
+      ven_id = #{venId,jdbcType=VARCHAR},
+      dev_model = #{model,jdbcType=VARCHAR},
+      dev_location = #{location,jdbcType=VARCHAR},
+      dev_install_time = #{installTime,jdbcType=TIMESTAMP},
+      dev_maintainer = #{maintainer,jdbcType=VARCHAR},
+      dev_phone = #{phone,jdbcType=VARCHAR},
+      dev_factors = #{factors,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      dev_activity = #{activity,jdbcType=TINYINT}
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgDevice">
+    <id column="dev_id" jdbcType="VARCHAR" property="devId" />
+    <result column="dev_sn" jdbcType="VARCHAR" property="sn" />
+    <result column="dev_type" jdbcType="TINYINT" property="type" />
+    <result column="ven_id" jdbcType="VARCHAR" property="venId" />
+    <result column="dev_model" jdbcType="VARCHAR" property="model" />
+    <result column="dev_location" jdbcType="VARCHAR" property="location" />
+    <result column="dev_install_time" jdbcType="TIMESTAMP" property="installTime" />
+    <result column="dev_maintainer" jdbcType="VARCHAR" property="maintainer" />
+    <result column="dev_phone" jdbcType="VARCHAR" property="phone" />
+    <result column="dev_factors" jdbcType="VARCHAR" property="factors" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="dev_activity" jdbcType="TINYINT" property="activity" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    dev_id, dev_sn, dev_type, ven_id, dev_model, dev_location, dev_install_time, dev_maintainer, 
+    dev_phone, dev_factors, gmt_created, gmt_modified, dev_activity
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgDeviceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_device
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ctg_device
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgDeviceExample">
+    delete from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgDevice">
+    insert into ctg_device (dev_id, dev_sn, dev_type, 
+      ven_id, dev_model, dev_location, 
+      dev_install_time, dev_maintainer, dev_phone, 
+      dev_factors, gmt_created, gmt_modified, 
+      dev_activity)
+    values (#{devId,jdbcType=VARCHAR}, #{sn,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, 
+      #{venId,jdbcType=VARCHAR}, #{model,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{installTime,jdbcType=TIMESTAMP}, #{maintainer,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{factors,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{activity,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgDevice">
+    insert into ctg_device
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="devId != null">
+        dev_id,
+      </if>
+      <if test="sn != null">
+        dev_sn,
+      </if>
+      <if test="type != null">
+        dev_type,
+      </if>
+      <if test="venId != null">
+        ven_id,
+      </if>
+      <if test="model != null">
+        dev_model,
+      </if>
+      <if test="location != null">
+        dev_location,
+      </if>
+      <if test="installTime != null">
+        dev_install_time,
+      </if>
+      <if test="maintainer != null">
+        dev_maintainer,
+      </if>
+      <if test="phone != null">
+        dev_phone,
+      </if>
+      <if test="factors != null">
+        dev_factors,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="activity != null">
+        dev_activity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="devId != null">
+        #{devId,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="venId != null">
+        #{venId,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null">
+        #{installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainer != null">
+        #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="factors != null">
+        #{factors,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activity != null">
+        #{activity,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgDeviceExample" resultType="java.lang.Integer">
+    select count(*) from ctg_device
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_device
+    <set>
+      <if test="record.devId != null">
+        dev_id = #{record.devId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sn != null">
+        dev_sn = #{record.sn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        dev_type = #{record.type,jdbcType=TINYINT},
+      </if>
+      <if test="record.venId != null">
+        ven_id = #{record.venId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.model != null">
+        dev_model = #{record.model,jdbcType=VARCHAR},
+      </if>
+      <if test="record.location != null">
+        dev_location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.installTime != null">
+        dev_install_time = #{record.installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.maintainer != null">
+        dev_maintainer = #{record.maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        dev_phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.factors != null">
+        dev_factors = #{record.factors,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmtCreated != null">
+        gmt_created = #{record.gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null">
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.activity != null">
+        dev_activity = #{record.activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_device
+    set dev_id = #{record.devId,jdbcType=VARCHAR},
+      dev_sn = #{record.sn,jdbcType=VARCHAR},
+      dev_type = #{record.type,jdbcType=TINYINT},
+      ven_id = #{record.venId,jdbcType=VARCHAR},
+      dev_model = #{record.model,jdbcType=VARCHAR},
+      dev_location = #{record.location,jdbcType=VARCHAR},
+      dev_install_time = #{record.installTime,jdbcType=TIMESTAMP},
+      dev_maintainer = #{record.maintainer,jdbcType=VARCHAR},
+      dev_phone = #{record.phone,jdbcType=VARCHAR},
+      dev_factors = #{record.factors,jdbcType=VARCHAR},
+      gmt_created = #{record.gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      dev_activity = #{record.activity,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgDevice">
+    update ctg_device
+    <set>
+      <if test="sn != null">
+        dev_sn = #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        dev_type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="venId != null">
+        ven_id = #{venId,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        dev_model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        dev_location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null">
+        dev_install_time = #{installTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainer != null">
+        dev_maintainer = #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        dev_phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="factors != null">
+        dev_factors = #{factors,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activity != null">
+        dev_activity = #{activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgDevice">
+    update ctg_device
+    set dev_sn = #{sn,jdbcType=VARCHAR},
+      dev_type = #{type,jdbcType=TINYINT},
+      ven_id = #{venId,jdbcType=VARCHAR},
+      dev_model = #{model,jdbcType=VARCHAR},
+      dev_location = #{location,jdbcType=VARCHAR},
+      dev_install_time = #{installTime,jdbcType=TIMESTAMP},
+      dev_maintainer = #{maintainer,jdbcType=VARCHAR},
+      dev_phone = #{phone,jdbcType=VARCHAR},
+      dev_factors = #{factors,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      dev_activity = #{activity,jdbcType=TINYINT}
+    where dev_id = #{devId,jdbcType=VARCHAR}
+  </update>
+</mapper>

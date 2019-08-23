@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: peer1
+server:
+  port: 5556
+  peer:
+    port: 5557
+  undertow:
+    accesslog:
+      enabled: true
+      dir: /zldata/mia/log/cloud/eureka1
+      suffix: log
+eureka:
+  instance:
+    hostname: peer1
+    prefer-ip-address: false
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:${server.peer.port}/eureka/
+#      defaultZone: http://192.168.10.232:${server.peer.port}/eureka/
+#    fetch-registry: true #一定要设置为true或者不写,否则会出现unavailable-replicas
+#    register-with-eureka: true #一定要设置为true或者不写,否则会出现unavailable-replicas
+#  server:
+#        enable-self-preservation: true
+#        renewal-percent-threshold: 0.45 #修改renews 和renews threshold的比值阀值可以影响self-preservation
+

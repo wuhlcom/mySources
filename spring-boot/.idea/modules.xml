@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-ehcache/my-ehcache.iml" filepath="$PROJECT_DIR$/my-ehcache/my-ehcache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-kaptcha/my-kaptcha.iml" filepath="$PROJECT_DIR$/my-kaptcha/my-kaptcha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-log/my-log.iml" filepath="$PROJECT_DIR$/my-log/my-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-pio/my-pio.iml" filepath="$PROJECT_DIR$/my-pio/my-pio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-spring/my-spring.iml" filepath="$PROJECT_DIR$/my-spring/my-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-swagger2/my-swagger2.iml" filepath="$PROJECT_DIR$/my-swagger2/my-swagger2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-verification/my-verification.iml" filepath="$PROJECT_DIR$/my-verification/my-verification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-websocket/my-websocket.iml" filepath="$PROJECT_DIR$/my-websocket/my-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-ws/my-ws.iml" filepath="$PROJECT_DIR$/my-ws/my-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-boot.iml" filepath="$PROJECT_DIR$/.idea/spring-boot.iml" />
+    </modules>
+  </component>
+</project>

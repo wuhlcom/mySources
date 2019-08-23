@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="spring-cloud-base:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spring_cloud_base_jar</output-path>
+    <root id="archive" name="spring-cloud-base.jar">
+      <element id="module-output" name="spring-cloud-base" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.41/fastjson-1.2.41.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

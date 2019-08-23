@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mybatis-plus-demo" />
+        <module name="mybatis-plus-generator-fire" />
+        <module name="mybatis-plus-generator-fire (1)" />
+        <module name="mybatis-plus-generator-test" />
+        <module name="spring-boot-mybatis-plus" />
+        <module name="springboot-mybatis-plus" />
+        <module name="springboot-mybatis-plus-genrator" />
+        <module name="springboot-mybatis-plus-genrator (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-plus-demo" target="1.8" />
+      <module name="mybatis-plus-generator-fire" target="1.8" />
+      <module name="mybatis-plus-generator-fire (1)" target="1.8" />
+      <module name="mybatis-plus-generator-test" target="1.8" />
+      <module name="spring-boot-mybatis-plus" target="1.8" />
+      <module name="springboot-mybatis-plus" target="1.8" />
+      <module name="springboot-mybatis-plus-genrator" target="1.8" />
+      <module name="springboot-mybatis-plus-genrator (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

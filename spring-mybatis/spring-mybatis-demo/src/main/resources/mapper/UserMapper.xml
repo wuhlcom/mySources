@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhilutec.mapper.user.UserMapper">
+
+    <resultMap id="userMap" type="com.zhilutec.entity.User">
+        <id property="id" column="id"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getById" parameterType="Long" resultMap="userMap">
+        select id,user_name,age
+        from  users
+        where  id=#{id}
+    </select>
+
+    <select id="getByUserName" parameterType="String" resultMap="userMap">
+        select id,user_name,age
+        from  users
+        where  user_name=#{userName}
+    </select>
+
+</mapper>

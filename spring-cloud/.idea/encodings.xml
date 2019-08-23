@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-actuator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-admin-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-config-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-feign-hystrixdashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-gateway/Readme.md" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-hi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-hi-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-hystrixdashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-lucy-hystrixdashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-miya-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-turbine" charset="UTF-8" />
+  </component>
+</project>

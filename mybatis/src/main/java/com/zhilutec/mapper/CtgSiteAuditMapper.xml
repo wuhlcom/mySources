@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhilutec.dao.CtgSiteAuditMapper">
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgSiteAudit">
+    <id column="adt_id" jdbcType="INTEGER" property="adtId" />
+    <result column="sit_id" jdbcType="VARCHAR" property="sitId" />
+    <result column="adt_status" jdbcType="TINYINT" property="adtStatus" />
+    <result column="adt_time" jdbcType="TIMESTAMP" property="adtTime" />
+    <result column="adt_expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    adt_id, sit_id, adt_status, adt_time, adt_expire_time
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_site_audit
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ctg_site_audit
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample">
+    delete from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    insert into ctg_site_audit (adt_id, sit_id, adt_status, 
+      adt_time, adt_expire_time)
+    values (#{adtId,jdbcType=INTEGER}, #{sitId,jdbcType=VARCHAR}, #{adtStatus,jdbcType=TINYINT}, 
+      #{adtTime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    insert into ctg_site_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adtId != null">
+        adt_id,
+      </if>
+      <if test="sitId != null">
+        sit_id,
+      </if>
+      <if test="adtStatus != null">
+        adt_status,
+      </if>
+      <if test="adtTime != null">
+        adt_time,
+      </if>
+      <if test="expireTime != null">
+        adt_expire_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adtId != null">
+        #{adtId,jdbcType=INTEGER},
+      </if>
+      <if test="sitId != null">
+        #{sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="adtStatus != null">
+        #{adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="adtTime != null">
+        #{adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireTime != null">
+        #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample" resultType="java.lang.Integer">
+    select count(*) from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_site_audit
+    <set>
+      <if test="record.adtId != null">
+        adt_id = #{record.adtId,jdbcType=INTEGER},
+      </if>
+      <if test="record.sitId != null">
+        sit_id = #{record.sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adtStatus != null">
+        adt_status = #{record.adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.adtTime != null">
+        adt_time = #{record.adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.expireTime != null">
+        adt_expire_time = #{record.expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_site_audit
+    set adt_id = #{record.adtId,jdbcType=INTEGER},
+      sit_id = #{record.sitId,jdbcType=VARCHAR},
+      adt_status = #{record.adtStatus,jdbcType=TINYINT},
+      adt_time = #{record.adtTime,jdbcType=TIMESTAMP},
+      adt_expire_time = #{record.expireTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    update ctg_site_audit
+    <set>
+      <if test="sitId != null">
+        sit_id = #{sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="adtStatus != null">
+        adt_status = #{adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="adtTime != null">
+        adt_time = #{adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireTime != null">
+        adt_expire_time = #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    update ctg_site_audit
+    set sit_id = #{sitId,jdbcType=VARCHAR},
+      adt_status = #{adtStatus,jdbcType=TINYINT},
+      adt_time = #{adtTime,jdbcType=TIMESTAMP},
+      adt_expire_time = #{expireTime,jdbcType=TIMESTAMP}
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgSiteAudit">
+    <id column="adt_id" jdbcType="INTEGER" property="adtId" />
+    <result column="sit_id" jdbcType="VARCHAR" property="sitId" />
+    <result column="adt_status" jdbcType="TINYINT" property="adtStatus" />
+    <result column="adt_time" jdbcType="TIMESTAMP" property="adtTime" />
+    <result column="adt_expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    adt_id, sit_id, adt_status, adt_time, adt_expire_time
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_site_audit
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ctg_site_audit
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample">
+    delete from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    insert into ctg_site_audit (adt_id, sit_id, adt_status, 
+      adt_time, adt_expire_time)
+    values (#{adtId,jdbcType=INTEGER}, #{sitId,jdbcType=VARCHAR}, #{adtStatus,jdbcType=TINYINT}, 
+      #{adtTime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    insert into ctg_site_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adtId != null">
+        adt_id,
+      </if>
+      <if test="sitId != null">
+        sit_id,
+      </if>
+      <if test="adtStatus != null">
+        adt_status,
+      </if>
+      <if test="adtTime != null">
+        adt_time,
+      </if>
+      <if test="expireTime != null">
+        adt_expire_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adtId != null">
+        #{adtId,jdbcType=INTEGER},
+      </if>
+      <if test="sitId != null">
+        #{sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="adtStatus != null">
+        #{adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="adtTime != null">
+        #{adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireTime != null">
+        #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgSiteAuditExample" resultType="java.lang.Integer">
+    select count(*) from ctg_site_audit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_site_audit
+    <set>
+      <if test="record.adtId != null">
+        adt_id = #{record.adtId,jdbcType=INTEGER},
+      </if>
+      <if test="record.sitId != null">
+        sit_id = #{record.sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adtStatus != null">
+        adt_status = #{record.adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.adtTime != null">
+        adt_time = #{record.adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.expireTime != null">
+        adt_expire_time = #{record.expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_site_audit
+    set adt_id = #{record.adtId,jdbcType=INTEGER},
+      sit_id = #{record.sitId,jdbcType=VARCHAR},
+      adt_status = #{record.adtStatus,jdbcType=TINYINT},
+      adt_time = #{record.adtTime,jdbcType=TIMESTAMP},
+      adt_expire_time = #{record.expireTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    update ctg_site_audit
+    <set>
+      <if test="sitId != null">
+        sit_id = #{sitId,jdbcType=VARCHAR},
+      </if>
+      <if test="adtStatus != null">
+        adt_status = #{adtStatus,jdbcType=TINYINT},
+      </if>
+      <if test="adtTime != null">
+        adt_time = #{adtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireTime != null">
+        adt_expire_time = #{expireTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgSiteAudit">
+    update ctg_site_audit
+    set sit_id = #{sitId,jdbcType=VARCHAR},
+      adt_status = #{adtStatus,jdbcType=TINYINT},
+      adt_time = #{adtTime,jdbcType=TIMESTAMP},
+      adt_expire_time = #{expireTime,jdbcType=TIMESTAMP}
+    where adt_id = #{adtId,jdbcType=INTEGER}
+  </update>
+</mapper>

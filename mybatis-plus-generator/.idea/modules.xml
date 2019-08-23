@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mybatis-plus-demo/mybatis-plus-demo.iml" filepath="$PROJECT_DIR$/mybatis-plus-demo/mybatis-plus-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mybatis-plus-generator.iml" filepath="$PROJECT_DIR$/.idea/mybatis-plus-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-plus-generator-fire/mybatis-plus-generator-fire.iml" filepath="$PROJECT_DIR$/mybatis-plus-generator-fire/mybatis-plus-generator-fire.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-plus-generator-test/mybatis-plus-generator-test.iml" filepath="$PROJECT_DIR$/mybatis-plus-generator-test/mybatis-plus-generator-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-plus/springboot-mybatis-plus.iml" filepath="$PROJECT_DIR$/springboot-mybatis-plus/springboot-mybatis-plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-plus-genrator/springboot-mybatis-plus-genrator.iml" filepath="$PROJECT_DIR$/springboot-mybatis-plus-genrator/springboot-mybatis-plus-genrator.iml" />
+    </modules>
+  </component>
+</project>

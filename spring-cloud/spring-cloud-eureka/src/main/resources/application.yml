@@ -1,0 +1,93 @@
+admin:
+  server: 5500
+spring:
+  application:
+    name: spring-cloud-eureka
+  boot:
+    admin:
+      client:  # 便于客户端可以在受保护的服务器上注册api
+        username: admin
+        password: admin
+        instance:
+          metadata: # 便服务器可以访问受保护的客户端端点
+            user:
+              name: admin
+              password: admin
+          prefer-ip: true
+          name: eureka
+        url: http://localhost:${admin.server}
+  profiles:
+    active: peer2
+#        # 下面是配置undertow作为服务器的参数
+#        # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+#        server.undertow.io-threads=4
+#        # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+#        server.undertow.worker-threads=20
+#        # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+#        # 每块buffer的空间大小,越小的空间被利用越充分
+#        server.undertow.buffer-size=1024
+#        # 是否分配的直接内存
+#        server.undertow.direct-buffers=true
+#        server.undertow.accesslog.enabled=true
+#        server.undertow.accesslog.dir=/zldata/mia/log/uwb/accessUndertow
+#        server.undertow.accesslog.suffix=log
+server:
+  port: 5555
+  undertow:
+    io-threads: 2
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+    accesslog:
+      enabled: true
+      dir: /zldata/mia/log/cloud/eureka
+      suffix: log
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#    register-with-eureka: true
+#    fetch-registry: true
+  server:
+        #关闭注册中心的保护机制,及时剔除不在线的服务
+        enable-self-preservation: false
+
+
+## 描述信息
+#info.blog-url=http://blog.battcn.com
+#info.author=wuhlcom
+## 如果 Maven 插件没配置此处请注释掉
+#info.version=@project.version@
+#info.name=@project.artifactId@
+#admin.server=5500
+## 加载所有的端点/默认只加载了 info / health
+#management.endpoints.web.exposure.include=*
+## 比较重要,默认 /actuator spring-boot-admin 扫描不到
+#management.endpoints.web.base-path=/
+#management.endpoint.health.show-details=always
+management:
+  info:
+    build:
+      enabled: true
+    author: whl
+    version: @project.version@
+    name: @project.artifactId@
+  security:
+    enabled: true
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whl.generator.dao.FirePersonMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.whl.generator.entity.FirePerson">
+        <id column="psn_id" property="psnId" />
+        <result column="psn_name" property="name" />
+        <result column="psn_code" property="code" />
+        <result column="psn_phone" property="phone" />
+        <result column="psn_position_code" property="positionCode" />
+        <result column="psn_type" property="type" />
+        <result column="psn_remark" property="remark" />
+        <result column="psn_activity" property="activity" />
+        <result column="data_modifier" property="dataModifier" />
+        <result column="data_author" property="dataAuthor" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="gmt_created" property="gmtCreated" />
+        <result column="insurance_company_id" property="insuranceCompanyId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        psn_id, psn_name, psn_code, psn_phone, psn_position_code, psn_type, psn_remark, psn_activity, data_modifier, data_author, gmt_modified, gmt_created, insurance_company_id
+    </sql>
+
+</mapper>

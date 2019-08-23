@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whl.generator.dao.UnitMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.whl.generator.entity.Unit">
+        <id column="unt_id" property="untId" />
+        <result column="unt_name" property="name" />
+        <result column="unt_code" property="code" />
+        <result column="unt_type" property="type" />
+        <result column="unt_provcode" property="provcode" />
+        <result column="unt_distcode" property="distcode" />
+        <result column="unt_towncode" property="towncode" />
+        <result column="unt_citycode" property="citycode" />
+        <result column="unt_lat" property="lat" />
+        <result column="unt_lng" property="lng" />
+        <result column="unt_postcode" property="postcode" />
+        <result column="unt_address" property="address" />
+        <result column="unt_level" property="level" />
+        <result column="unt_phone" property="phone" />
+        <result column="unt_status" property="status" />
+        <result column="unt_monitor_phone" property="monitorPhone" />
+        <result column="unt_employee" property="employee" />
+        <result column="unt_establishment" property="establishment" />
+        <result column="unt_superior_unit" property="superiorUnit" />
+        <result column="unt_subordinate_unit" property="subordinateUnit" />
+        <result column="unt_economic_owership" property="economicOwership" />
+        <result column="unt_fixed_assets" property="fixedAssets" />
+        <result column="unt_all_area" property="allArea" />
+        <result column="unt_floor_space" property="floorSpace" />
+        <result column="unt_netin_date" property="netinDate" />
+        <result column="unt_plane_id" property="planeId" />
+        <result column="unt_monitor_level" property="monitorLevel" />
+        <result column="unt_monitor_id" property="monitorId" />
+        <result column="unt_pid" property="pid" />
+        <result column="unt_redundant" property="redundant" />
+        <result column="unt_activity" property="activity" />
+        <result column="unt_remark" property="remark" />
+        <result column="data_author" property="dataAuthor" />
+        <result column="data_modifier" property="dataModifier" />
+        <result column="gmt_created" property="gmtCreated" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        unt_id, unt_name, unt_code, unt_type, unt_provcode, unt_distcode, unt_towncode, unt_citycode, unt_lat, unt_lng, unt_postcode, unt_address, unt_level, unt_phone, unt_status, unt_monitor_phone, unt_employee, unt_establishment, unt_superior_unit, unt_subordinate_unit, unt_economic_owership, unt_fixed_assets, unt_all_area, unt_floor_space, unt_netin_date, unt_plane_id, unt_monitor_level, unt_monitor_id, unt_pid, unt_redundant, unt_activity, unt_remark, data_author, data_modifier, gmt_created, gmt_modified
+    </sql>
+
+</mapper>

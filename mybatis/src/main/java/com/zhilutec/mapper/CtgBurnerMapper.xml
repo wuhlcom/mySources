@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhilutec.dao.CtgBurnerMapper">
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgBurner">
+    <id column="bnr_id" jdbcType="VARCHAR" property="bnrId" />
+    <result column="bnr_dct_code" jdbcType="VARCHAR" property="dctCode" />
+    <result column="bnr_number" jdbcType="TINYINT" property="number" />
+    <result column="bnr_power" jdbcType="DECIMAL" property="power" />
+    <result column="fuel_dct_code" jdbcType="VARCHAR" property="fuelDctCode" />
+    <result column="bnr_activity" jdbcType="TINYINT" property="activity" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    bnr_id, bnr_dct_code, bnr_number, bnr_power, fuel_dct_code, bnr_activity
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgBurnerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_burner
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ctg_burner
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgBurnerExample">
+    delete from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgBurner">
+    insert into ctg_burner (bnr_id, bnr_dct_code, bnr_number, 
+      bnr_power, fuel_dct_code, bnr_activity
+      )
+    values (#{bnrId,jdbcType=VARCHAR}, #{dctCode,jdbcType=VARCHAR}, #{number,jdbcType=TINYINT}, 
+      #{power,jdbcType=DECIMAL}, #{fuelDctCode,jdbcType=VARCHAR}, #{activity,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgBurner">
+    insert into ctg_burner
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bnrId != null">
+        bnr_id,
+      </if>
+      <if test="dctCode != null">
+        bnr_dct_code,
+      </if>
+      <if test="number != null">
+        bnr_number,
+      </if>
+      <if test="power != null">
+        bnr_power,
+      </if>
+      <if test="fuelDctCode != null">
+        fuel_dct_code,
+      </if>
+      <if test="activity != null">
+        bnr_activity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bnrId != null">
+        #{bnrId,jdbcType=VARCHAR},
+      </if>
+      <if test="dctCode != null">
+        #{dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=TINYINT},
+      </if>
+      <if test="power != null">
+        #{power,jdbcType=DECIMAL},
+      </if>
+      <if test="fuelDctCode != null">
+        #{fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="activity != null">
+        #{activity,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgBurnerExample" resultType="java.lang.Integer">
+    select count(*) from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_burner
+    <set>
+      <if test="record.bnrId != null">
+        bnr_id = #{record.bnrId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dctCode != null">
+        bnr_dct_code = #{record.dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null">
+        bnr_number = #{record.number,jdbcType=TINYINT},
+      </if>
+      <if test="record.power != null">
+        bnr_power = #{record.power,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fuelDctCode != null">
+        fuel_dct_code = #{record.fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activity != null">
+        bnr_activity = #{record.activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_burner
+    set bnr_id = #{record.bnrId,jdbcType=VARCHAR},
+      bnr_dct_code = #{record.dctCode,jdbcType=VARCHAR},
+      bnr_number = #{record.number,jdbcType=TINYINT},
+      bnr_power = #{record.power,jdbcType=DECIMAL},
+      fuel_dct_code = #{record.fuelDctCode,jdbcType=VARCHAR},
+      bnr_activity = #{record.activity,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgBurner">
+    update ctg_burner
+    <set>
+      <if test="dctCode != null">
+        bnr_dct_code = #{dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        bnr_number = #{number,jdbcType=TINYINT},
+      </if>
+      <if test="power != null">
+        bnr_power = #{power,jdbcType=DECIMAL},
+      </if>
+      <if test="fuelDctCode != null">
+        fuel_dct_code = #{fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="activity != null">
+        bnr_activity = #{activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgBurner">
+    update ctg_burner
+    set bnr_dct_code = #{dctCode,jdbcType=VARCHAR},
+      bnr_number = #{number,jdbcType=TINYINT},
+      bnr_power = #{power,jdbcType=DECIMAL},
+      fuel_dct_code = #{fuelDctCode,jdbcType=VARCHAR},
+      bnr_activity = #{activity,jdbcType=TINYINT}
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.zhilutec.entity.CtgBurner">
+    <id column="bnr_id" jdbcType="VARCHAR" property="bnrId" />
+    <result column="bnr_dct_code" jdbcType="VARCHAR" property="dctCode" />
+    <result column="bnr_number" jdbcType="TINYINT" property="number" />
+    <result column="bnr_power" jdbcType="DECIMAL" property="power" />
+    <result column="fuel_dct_code" jdbcType="VARCHAR" property="fuelDctCode" />
+    <result column="bnr_activity" jdbcType="TINYINT" property="activity" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    bnr_id, bnr_dct_code, bnr_number, bnr_power, fuel_dct_code, bnr_activity
+  </sql>
+  <select id="selectByExample" parameterType="com.zhilutec.entity.CtgBurnerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ctg_burner
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ctg_burner
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhilutec.entity.CtgBurnerExample">
+    delete from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhilutec.entity.CtgBurner">
+    insert into ctg_burner (bnr_id, bnr_dct_code, bnr_number, 
+      bnr_power, fuel_dct_code, bnr_activity
+      )
+    values (#{bnrId,jdbcType=VARCHAR}, #{dctCode,jdbcType=VARCHAR}, #{number,jdbcType=TINYINT}, 
+      #{power,jdbcType=DECIMAL}, #{fuelDctCode,jdbcType=VARCHAR}, #{activity,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhilutec.entity.CtgBurner">
+    insert into ctg_burner
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bnrId != null">
+        bnr_id,
+      </if>
+      <if test="dctCode != null">
+        bnr_dct_code,
+      </if>
+      <if test="number != null">
+        bnr_number,
+      </if>
+      <if test="power != null">
+        bnr_power,
+      </if>
+      <if test="fuelDctCode != null">
+        fuel_dct_code,
+      </if>
+      <if test="activity != null">
+        bnr_activity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bnrId != null">
+        #{bnrId,jdbcType=VARCHAR},
+      </if>
+      <if test="dctCode != null">
+        #{dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=TINYINT},
+      </if>
+      <if test="power != null">
+        #{power,jdbcType=DECIMAL},
+      </if>
+      <if test="fuelDctCode != null">
+        #{fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="activity != null">
+        #{activity,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhilutec.entity.CtgBurnerExample" resultType="java.lang.Integer">
+    select count(*) from ctg_burner
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ctg_burner
+    <set>
+      <if test="record.bnrId != null">
+        bnr_id = #{record.bnrId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dctCode != null">
+        bnr_dct_code = #{record.dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null">
+        bnr_number = #{record.number,jdbcType=TINYINT},
+      </if>
+      <if test="record.power != null">
+        bnr_power = #{record.power,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fuelDctCode != null">
+        fuel_dct_code = #{record.fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activity != null">
+        bnr_activity = #{record.activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ctg_burner
+    set bnr_id = #{record.bnrId,jdbcType=VARCHAR},
+      bnr_dct_code = #{record.dctCode,jdbcType=VARCHAR},
+      bnr_number = #{record.number,jdbcType=TINYINT},
+      bnr_power = #{record.power,jdbcType=DECIMAL},
+      fuel_dct_code = #{record.fuelDctCode,jdbcType=VARCHAR},
+      bnr_activity = #{record.activity,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhilutec.entity.CtgBurner">
+    update ctg_burner
+    <set>
+      <if test="dctCode != null">
+        bnr_dct_code = #{dctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        bnr_number = #{number,jdbcType=TINYINT},
+      </if>
+      <if test="power != null">
+        bnr_power = #{power,jdbcType=DECIMAL},
+      </if>
+      <if test="fuelDctCode != null">
+        fuel_dct_code = #{fuelDctCode,jdbcType=VARCHAR},
+      </if>
+      <if test="activity != null">
+        bnr_activity = #{activity,jdbcType=TINYINT},
+      </if>
+    </set>
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhilutec.entity.CtgBurner">
+    update ctg_burner
+    set bnr_dct_code = #{dctCode,jdbcType=VARCHAR},
+      bnr_number = #{number,jdbcType=TINYINT},
+      bnr_power = #{power,jdbcType=DECIMAL},
+      fuel_dct_code = #{fuelDctCode,jdbcType=VARCHAR},
+      bnr_activity = #{activity,jdbcType=TINYINT}
+    where bnr_id = #{bnrId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-actuator" />
+        <module name="spring-cloud-admin-server" />
+        <module name="spring-cloud-base" />
+        <module name="spring-cloud-config" />
+        <module name="spring-cloud-config-client" />
+        <module name="spring-cloud-config-server" />
+        <module name="spring-cloud-dao" />
+        <module name="spring-cloud-eureka" />
+        <module name="spring-cloud-feign" />
+        <module name="spring-cloud-feign-hystrixdashboard" />
+        <module name="spring-cloud-gateway" />
+        <module name="spring-cloud-hi" />
+        <module name="spring-cloud-hi (2)" />
+        <module name="spring-cloud-hi-hystrix" />
+        <module name="spring-cloud-hi-zipkin" />
+        <module name="spring-cloud-hystrixdashboard" />
+        <module name="spring-cloud-lucy" />
+        <module name="spring-cloud-lucy-hystrixdashboard" />
+        <module name="spring-cloud-miya" />
+        <module name="spring-cloud-miya-zipkin" />
+        <module name="spring-cloud-ribbon" />
+        <module name="spring-cloud-test" />
+        <module name="spring-cloud-turbine" />
+      </profile>
+      <profile name="Annotation profile for spring-cloud" enabled="true">
+        <sourceOutputDir name="../spring-cloud-hi/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../spring-cloud-hi/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-hi (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-cloud" target="1.8" />
+      <module name="spring-cloud-actuator" target="1.8" />
+      <module name="spring-cloud-admin-server" target="1.8" />
+      <module name="spring-cloud-base" target="1.8" />
+      <module name="spring-cloud-config" target="1.8" />
+      <module name="spring-cloud-config-client" target="1.8" />
+      <module name="spring-cloud-config-server" target="1.8" />
+      <module name="spring-cloud-dao" target="1.8" />
+      <module name="spring-cloud-eureka" target="1.6" />
+      <module name="spring-cloud-feign" target="1.8" />
+      <module name="spring-cloud-feign-hystrixdashboard" target="1.8" />
+      <module name="spring-cloud-gateway" target="1.8" />
+      <module name="spring-cloud-hi" target="1.8" />
+      <module name="spring-cloud-hi (1)" target="1.8" />
+      <module name="spring-cloud-hi (2)" target="1.8" />
+      <module name="spring-cloud-hi-hystrix" target="1.8" />
+      <module name="spring-cloud-hi-zipkin" target="1.8" />
+      <module name="spring-cloud-hystrixdashboard" target="1.8" />
+      <module name="spring-cloud-lucy" target="1.8" />
+      <module name="spring-cloud-lucy-hystrixdashboard" target="1.8" />
+      <module name="spring-cloud-miya" target="1.8" />
+      <module name="spring-cloud-miya-zipkin" target="1.8" />
+      <module name="spring-cloud-ribbon" target="1.8" />
+      <module name="spring-cloud-test" target="1.8" />
+      <module name="spring-cloud-turbine" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

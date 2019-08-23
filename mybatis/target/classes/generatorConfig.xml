@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\maven_repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+    <context id="testTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@150.16.17.22:1521:wsbs"
+            userId="hr" password="hr123"> </jdbcConnection> -->
+        <!-- mysql数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.10.232:3306/zl_catering" userId="root"
+                        password="root"/>
+
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL
+            和 NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="com.zhilutec.entity"
+                            targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="com.zhilutec.mapper"
+                         targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.zhilutec.dao"
+                             targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 指定数据库表 -->
+        <!-- 需要生成的实体类对应的表名，多个实体类复制多份该配置即可 -->
+        <table tableName="ctg_unit" domainObjectName="CtgUnit"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <!--生成的类的属性名去掉匹配配的字符-->
+            <columnRenamingRule searchString="unt_" replaceString=""/>
+
+            <!--将表中的字段名生成为指定的类属性名-->
+            <columnOverride column="unt_id" property="untId"/>
+            <!-- 将tinyint转成integer-->
+            <columnOverride column="unt_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="unt_monitor" javaType="java.lang.Integer"/>
+            <columnOverride column="unt_attention" javaType="java.lang.Integer"/>
+            <columnOverride column="unt_scale" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_burner" domainObjectName="CtgBurner"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <columnRenamingRule searchString="bnr_" replaceString="" />
+            <columnOverride column="bnr_id" property="bnrId"/>
+            <columnOverride column="bnr_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="bnr_number" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_supervisor" domainObjectName="CtgSupervisor"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="spv_" replaceString="" />
+            <columnOverride column="spv_id" property="spvId"/>
+            <columnOverride column="spv_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_unit_focus" domainObjectName="CtgUnitFocus"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="uf_" replaceString="" />
+            <columnOverride column="uf_id" property="ufId"/>
+            <columnOverride column="uf_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_unit_record" domainObjectName="CtgUnitRecord"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="ur_" replaceString="" />
+            <columnOverride column="ur_id" property="urId"/>
+            <columnOverride column="ur_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_unit_burner" domainObjectName="CtgUnitBurner"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="ub_" replaceString="" />
+            <columnOverride column="ub_id" property="ubId"/>
+            <columnOverride column="ub_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_unit_supervisor" domainObjectName="CtgUnitSupervisor"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="us_" replaceString="" />
+            <columnOverride column="us_id" property="usId"/>
+            <columnOverride column="us_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_operate_log" domainObjectName="CtgOperateLog"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="sup_" replaceString="" />
+            <columnOverride column="log_id" property="logId"/>
+            <columnOverride column="log_time" property="logTime"/>
+        </table>
+
+        <table tableName="ctg_dictionary" domainObjectName="CtgDictionary"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="dct_" replaceString="" />
+            <columnOverride column="dct_id" property="dctId"/>
+        </table>
+
+        <table tableName="ctg_advice_group" domainObjectName="CtgAdviceGroup"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="grp_" replaceString="" />
+            <columnOverride column="grp_id" property="grpId"/>
+            <columnOverride column="grp_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_advice_member" domainObjectName="CtgAdviceMember"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="mbr_" replaceString="" />
+            <columnOverride column="mbr_id" property="mbrId"/>
+            <columnOverride column="mbr_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="mbr_type" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_focus" domainObjectName="CtgFocus"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="fcs_" replaceString="" />
+            <columnOverride column="fcs_id" property="fcsId"/>
+            <columnOverride column="fcs_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="fcs_type" javaType="java.lang.Integer"/>
+            <columnOverride column="fcs_monitor" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_focus_site" domainObjectName="CtgFocusSite"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="fs_" replaceString="" />
+            <columnOverride column="fs_id" property="fsId"/>
+            <columnOverride column="fs_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_site" domainObjectName="CtgSite"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="sit_" replaceString="" />
+            <columnOverride column="sit_id" property="sitId"/>
+            <columnOverride column="sit_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="sit_type" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_site_audit" domainObjectName="CtgSiteAudit"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="adt_" replaceString="" />
+            <columnOverride column="adt_id" property="adtId"/>
+            <columnOverride column="adt_time" property="adtTime"/>
+            <columnOverride column="adt_status" property="adtStatus" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_site_check" domainObjectName="CtgSiteCheck"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="chc_" replaceString="" />
+            <columnOverride column="chc_id" property="chcId"/>
+            <columnOverride column="chc_time" property="chcTime"/>
+            <columnOverride column="chc_status" property="chcStatus" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_group_member" domainObjectName="CtgGroupMember"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="gm_" replaceString="" />
+            <columnOverride column="gm_id" property="gmId"/>
+            <columnOverride column="gm_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_site_device" domainObjectName="CtgSiteDevice"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="sd_" replaceString="" />
+            <columnOverride column="sd_id" property="sdId"/>
+            <columnOverride column="sd_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_device" domainObjectName="CtgDevice"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="dev_" replaceString="" />
+            <columnOverride column="dev_id" property="devId"/>
+            <columnOverride column="dev_activity" javaType="java.lang.Integer"/>
+            <columnOverride column="dev_type" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="ctg_vendor" domainObjectName="CtgVendor"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+            <columnRenamingRule searchString="ven_" replaceString="" />
+            <columnOverride column="ven_id" property="venId"/>
+            <columnOverride column="ven_activity" javaType="java.lang.Integer"/>
+        </table>
+
+        <!-- 匹配数据库中所有的表（适合表太多） -->
+        <!-- <table schema="" tableName="%" enableCountByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" enableUpdateByExample="false"> <columnRenamingRule
+            searchString="^[^_]+" replaceString="" /> </table> -->
+
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whl.generator.dao.UnitMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.whl.generator.entity.Unit">
+        <id column="id" property="id" />
+        <result column="unit_name" property="unitName" />
+        <result column="unit_code" property="unitCode" />
+        <result column="type" property="type" />
+        <result column="provcode" property="provcode" />
+        <result column="distcode" property="distcode" />
+        <result column="towncode" property="towncode" />
+        <result column="citycode" property="citycode" />
+        <result column="lat" property="lat" />
+        <result column="lng" property="lng" />
+        <result column="postcode" property="postcode" />
+        <result column="address" property="address" />
+        <result column="level" property="level" />
+        <result column="phone" property="phone" />
+        <result column="status" property="status" />
+        <result column="monitor_phone" property="monitorPhone" />
+        <result column="employee" property="employee" />
+        <result column="establishment_date" property="establishmentDate" />
+        <result column="superior_unit" property="superiorUnit" />
+        <result column="subordinate_unit" property="subordinateUnit" />
+        <result column="economic_owership" property="economicOwership" />
+        <result column="fixed_assets" property="fixedAssets" />
+        <result column="total_area" property="totalArea" />
+        <result column="floor_space" property="floorSpace" />
+        <result column="netin_date" property="netinDate" />
+        <result column="plane_id" property="planeId" />
+        <result column="monitor_level" property="monitorLevel" />
+        <result column="monitor_id" property="monitorId" />
+        <result column="pid" property="pid" />
+        <result column="redundant_id" property="redundantId" />
+        <result column="creator" property="creator" />
+        <result column="modifier" property="modifier" />
+        <result column="create_date" property="createDate" />
+        <result column="modify_date" property="modifyDate" />
+        <result column="remarks" property="remarks" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="del_flag" property="delFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, unit_name, unit_code, type, provcode, distcode, towncode, citycode, lat, lng, postcode, address, level, phone, status, monitor_phone, employee, establishment_date, superior_unit, subordinate_unit, economic_owership, fixed_assets, total_area, floor_space, netin_date, plane_id, monitor_level, monitor_id, pid, redundant_id, creator, modifier, create_date, modify_date, remarks, tenant_id, del_flag
+    </sql>
+
+</mapper>

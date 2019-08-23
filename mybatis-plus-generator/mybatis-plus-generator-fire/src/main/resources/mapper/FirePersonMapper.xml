@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whl.generator.dao.FirePersonMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.whl.generator.entity.FirePerson">
+        <id column="id" property="id" />
+        <result column="psn_name" property="psnName" />
+        <result column="psn_code" property="psnCode" />
+        <result column="phone" property="phone" />
+        <result column="position_code" property="positionCode" />
+        <result column="type" property="type" />
+        <result column="creator" property="creator" />
+        <result column="create_date" property="createDate" />
+        <result column="modifier" property="modifier" />
+        <result column="modify_date" property="modifyDate" />
+        <result column="remarks" property="remarks" />
+        <result column="del_flag" property="delFlag" />
+        <result column="tenant_id" property="tenantId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, psn_name, psn_code, phone, position_code, type, creator, create_date, modifier, modify_date, remarks, del_flag, tenant_id
+    </sql>
+
+</mapper>

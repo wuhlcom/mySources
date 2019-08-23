@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhilutec.mapper.student.StudentMapper">
+
+    <resultMap id="stuMap" type="com.zhilutec.entity.Student">
+        <id property="stuId" column="stu_id"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getById" parameterType="String" resultMap="userMap">
+        select stu_id,name,sex
+        from  student
+        where  stu_id=#{stuId}
+    </select>
+
+    <select id="getByName" parameterType="String" resultMap="userMap">
+        select stu_id,name,sex
+        from  student
+        where  name LIKE concat ('%',#{stuId}, '%')
+    </select>
+
+</mapper>

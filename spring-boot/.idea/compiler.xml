@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mywebsocket" />
+        <module name="my-websocket" />
+        <module name="my-kaptcha" />
+        <module name="my-swagger2" />
+        <module name="my-spring" />
+        <module name="my-ehcache" />
+        <module name="my-verification" />
+        <module name="my-kaptcha (1) (com.mytest)" />
+        <module name="kaptcha" />
+        <module name="my-pio" />
+        <module name="my-log" />
+        <module name="my-ehance" />
+        <module name="my-ws" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kaptcha" target="1.8" />
+      <module name="my-ehance" target="1.8" />
+      <module name="my-ehcache" target="1.8" />
+      <module name="my-kaptcha" target="1.5" />
+      <module name="my-kaptcha (1) (com.mytest)" target="1.8" />
+      <module name="my-log" target="1.8" />
+      <module name="my-pio" target="1.8" />
+      <module name="my-spring" target="1.8" />
+      <module name="my-swagger2" target="1.8" />
+      <module name="my-verification" target="1.8" />
+      <module name="my-websocket" target="1.8" />
+      <module name="my-ws" target="1.8" />
+      <module name="mywebsocket" target="1.8" />
+      <module name="spring-boot" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="my-log" options="-parameters" />
+      <module name="my-pio" options="-parameters" />
+      <module name="my-verification" options="-parameters" />
+      <module name="my-ws" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/my-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/my-ehance/pom.xml" />
+        <option value="$PROJECT_DIR$/my-kaptcha/pom.xml" />
+        <option value="$PROJECT_DIR$/my-ehcache/pom.xml" />
+        <option value="$PROJECT_DIR$/my-swagger2/pom.xml" />
+        <option value="$PROJECT_DIR$/my-verification/pom.xml" />
+        <option value="$PROJECT_DIR$/mywebsocket/pom.xml" />
+        <option value="$PROJECT_DIR$/my-ws/pom.xml" />
+        <option value="$PROJECT_DIR$/my-websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8.0.121" project-jdk-type="JavaSDK" />
+</project>
