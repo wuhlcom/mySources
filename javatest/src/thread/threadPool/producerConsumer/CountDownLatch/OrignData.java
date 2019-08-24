@@ -1,4 +1,4 @@
-package thread.threadPool.producerConsumer.demo2;
+package thread.threadPool.producerConsumer.CountDownLatch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,14 @@ public class OrignData {
             person.setId(i);
             person.setName("名字:" + String.valueOf(i));
             person.setAge(i);
+            people.add(person);
         }
         return people;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(OrignData.genData(10));
+
     }
 
 }

@@ -1,7 +1,16 @@
-package thread.threadPool.producerConsumer.demo2;
+package thread.threadPool.producerConsumer.CountDownLatch;
 
 
 public class Person {
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     private Integer id;
     private String name;
     private Integer age;

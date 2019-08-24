@@ -1,6 +1,6 @@
-package com.zhilutec.fc.common.tool.thread;
+package thread.threadPool.producerConsumer.CountDownLatch;
 
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+//import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +48,7 @@ public class ThreadPoolTool<T> {
      */
     private CountDownLatch begin, end;
 
-    private static final ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build();
+//    private static final ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build();
 
     /**
      * 线程池
@@ -80,7 +80,7 @@ public class ThreadPoolTool<T> {
     public List<Future<Object>> excute() throws InterruptedException {
         executorService = new ThreadPoolExecutor(corePoolsize, this.runSize,
                 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingDeque<Runnable>(1024), threadFactory, new ThreadPoolExecutor.AbortPolicy());
+                new LinkedBlockingDeque<Runnable>(1024), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
         List<Future<Object>> resultList = new ArrayList<Future<Object>>();
         begin = new CountDownLatch(1);

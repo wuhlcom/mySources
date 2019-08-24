@@ -25,7 +25,7 @@ public class Producer implements Runnable {
     }
 
     private int produce() {
-        int n = new Random().nextInt(10000);
+        int n = new Random().nextInt(100);
         System.out.println("Thread: " + Thread.currentThread().getName() + " produce: " + n);
         return n;
     }
