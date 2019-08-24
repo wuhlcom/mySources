@@ -22,9 +22,9 @@ public class MyConsumer<T> implements Callable<Object> {
     @Override
     public Object call() throws Exception {
         List<T> list = null;
-        System.out.println("consumer:" + Thread.currentThread().getName() + " running");
+        System.out.println("consumer:" + Thread.currentThread().getName() + ":"+listSize+" running");
         int count = 0;
-        while (listSize > 0) {
+        while (true) {
             try {
 //                Object take = queue.poll(500L, TimeUnit.MILLISECONDS);
                 T take = queue.poll();

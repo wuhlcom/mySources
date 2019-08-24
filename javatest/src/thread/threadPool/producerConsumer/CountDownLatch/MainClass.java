@@ -26,16 +26,16 @@ public class MainClass {
         List<Person> newList = null;
 
         //实现回调函数
-        MyProvider.Callback<Person> callback = new MyProvider.Callback<Person>() {
-            @Override
-            public Object method(LinkedBlockingQueue<Person> queue, List<Person> people, String type) {
-                for (Person person : people) {
-                    person.setName(type + ":" + person.getId().toString());
-                    queue.add(person);
-                }
-                return people;
-            }
-        };
+//        MyProvider.Callback<Person> callback = new MyProvider.Callback<Person>() {
+//            @Override
+//            public Object method(LinkedBlockingQueue<Person> queue, List<Person> people, String type) {
+//                for (Person person : people) {
+//                    person.setName(type + ":" + person.getId().toString());
+//                    queue.add(person);
+//                }
+//                return people;
+//            }
+//        };
 
 
         //主线程操作完成后再进行子线程操作
@@ -56,21 +56,22 @@ public class MainClass {
             }
             if (newList != null && newList.size() > 0) {
                 System.out.println(newList);
-                MyProvider<Person> myProvider = new MyProvider(queue, newList, "p1", begin, end) {
-                    @Override
-                    public Object method(LinkedBlockingQueue queue, List entityList, String type) {
-                        return callback.method(queue, entityList, type);
-                    }
-                };
+//                MyProvider<Person> myProvider = new MyProvider(queue, newList, "p1", begin, end) {
+//                    @Override
+//                    public Object method(LinkedBlockingQueue queue, List entityList, String type) {
+//                        return callback.method(queue, entityList, type);
+//                    }
+//                };
+                MyProvider<Person> myProvider =new MyProvider<Person>(queue,newList,"p1",begin,end) ;
                 FutureTask<Object> futureTask = new FutureTask<Object>(myProvider);
                 executor.submit(futureTask);
             }
         }
 
-        MyConsumer myConsumer = new MyConsumer(queue,queueSize);
+        MyConsumer<Person> myConsumer = new MyConsumer(queue,queueSize);
         FutureTask<Object> futureTask = new FutureTask<Object>(myConsumer);
         MyConsumer myConsumer2 = new MyConsumer(queue,queueSize);
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         executor.submit(futureTask);
 
         //计数器减一
@@ -79,9 +80,9 @@ public class MainClass {
         executor.shutdown();
 //        myProvider1.toStop();
 //        myProvider2.toStop();
-        Object o = futureTask.get();
-        System.out.println(o);
-        futureTask.cancel(false);
+//        Object o = futureTask.get();
+//        System.out.println(o);
+//        futureTask.cancel(false);
         while (true) {
             int activeCount = executor.getActiveCount();
             System.out.println("executor.getTaskCount():" + executor.getTaskCount());
