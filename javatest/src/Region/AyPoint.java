@@ -1,21 +1,21 @@
-package Region;
+package region;
 
 public class AyPoint {
 
     /*
-     * X×ø±ê
+     * Xï¿½ï¿½ï¿½ï¿½
      */
     private double _x;
     //	public void setX(double x){
 //		this._x = x;
 //	}
     /*
-	 * Y×ø±ê
+	 * Yï¿½ï¿½ï¿½ï¿½
 	 */
     private double _y;
 
     /*
-     * ¹¹Ôìº¯Êý
+     * ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½
      */
     public AyPoint(double x, double y) {
         this._x = x;

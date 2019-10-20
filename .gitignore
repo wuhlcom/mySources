@@ -1,3 +1,12 @@
-.idea/#
-class#
-out/*
+#忽略idea文件及目录
+.idea
+#out
+#class#
+#忽略以iml结尾的文件
+*.iml
+#*.class
+
+#class/*.class
+#classes/*.class
+javatest/.idea/libraries/cglib_3_2_7.xml
+javatest/.idea/libraries/asm_6_2.xml
