@@ -1,4 +1,4 @@
-package enum_demo;
+package enumDemo;
 
 public enum EnumDemo {
     SINGLE(1),

@@ -1,4 +1,4 @@
-package enum_demo;
+package enumDemo;
 
 public class TestSeanson {
     public static void main(String[] args) {
