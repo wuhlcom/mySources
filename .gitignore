@@ -10,9 +10,4 @@ out/
 
 class/*.class
 classes/*.class
-javatest/.idea/libraries/cglib_3_2_7.xml
-<<<<<<< HEAD
-javatest/.idea/libraries/asm_6_2.xml
-=======
-javatest/.idea/libraries/asm_6_2.xml
->>>>>>> 708ed74c3d1dae6a8323f47bcf65a658b204946d
+
