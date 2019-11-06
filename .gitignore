@@ -1,0 +1,14 @@
+#忽略idea文件及目录
+.idea
+out
+#忽略以iml结尾的文件
+*.iml
+*.class
+#忽略当前路径下的bin文件夹，该文件夹下的所有内容都会被忽略，不忽略 bin 文件
+.idea/
+out/
+
+class/*.class
+classes/*.class
+javatest/.idea/libraries/cglib_3_2_7.xml
+javatest/.idea/libraries/asm_6_2.xml
