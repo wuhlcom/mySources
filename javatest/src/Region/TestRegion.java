@@ -1,4 +1,4 @@
-package Region;
+package region;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +17,8 @@ public class TestRegion {
 		// apl.add(new AyPoint(117.18139,39.13724));
 		// //apl.add(new AyPoint(117.1171,39.392));
 		// boolean b = AnalysisPointAndRegion.judgeMeetPoint(p, apl);
-		// String isIn = b?"ÄÚ":"Íâ";
-		// System.out.println("µãÔÚÎ§À¸  " + isIn);
+		// String isIn = b?"ï¿½ï¿½":"ï¿½ï¿½";
+		// System.out.println("ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½  " + isIn);
 
 		AyPoint p1 = new AyPoint(1.4,1.5);
 		List<AyPoint> apl1 = new ArrayList<AyPoint>();
@@ -28,8 +28,8 @@ public class TestRegion {
         apl1.add(new AyPoint(2,2));
 
 		boolean b1= AnalysisPointAndRegion.judgeMeetPoint(p1,apl1);
-        String isIn1 = b1?"ÄÚ":"Íâ";
-        System.out.println("µãÔÚÎ§À¸  " + isIn1);
+        String isIn1 = b1?"ï¿½ï¿½":"ï¿½ï¿½";
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½  " + isIn1);
 
     }
 }

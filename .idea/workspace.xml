@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4164ee62-ff27-4857-8e3b-5934716e5f8d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_poi_poi_scratchpad_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/my-kie/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot/my-kie/src/main/java/LoadRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/out/artifacts/javatest_jar/javatest.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/out/artifacts/javatest_jar/javatest.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/src/Region/AnalysisPointAndRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/src/Region/AnalysisPointAndRegion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/src/Region/AyPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/src/Region/AyPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/src/Region/TestRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/src/Region/TestRegion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/target/classes/Region/AnalysisPointAndRegion.class" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/target/classes/Region/AnalysisPointAndRegion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/target/classes/Region/AyPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/target/classes/Region/AyPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatest/target/classes/Region/TestRegion.class" beforeDir="false" afterPath="$PROJECT_DIR$/javatest/target/classes/Region/TestRegion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_testng_testng_7_0_0_beta7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/libraries/Maven__org_testng_testng_7_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/my-pio/my-pio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/my-pio/my-pio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/my-pio/src/main/java/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/my-pio/src/main/java/pio/ExcelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/my-websocket/my-websocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/my-websocket/my-websocket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot/pom.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="29" />
+    <option name="y" value="204" />
+    <option name="width" value="1582" />
+    <option name="height" value="821" />
+  </component>
+  <component name="ProjectId" id="1QwkLXzhQcpy2RRbnlQNq87jr7j" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/javatest" />
+    <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4164ee62-ff27-4857-8e3b-5934716e5f8d" name="Default" comment="" />
+      <created>1554174577790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554174577790</updated>
+      <workItem from="1554174580915" duration="85000" />
+      <workItem from="1562056323786" duration="162000" />
+      <workItem from="1568688991760" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

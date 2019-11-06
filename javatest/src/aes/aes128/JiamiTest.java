@@ -3,7 +3,6 @@
 * @version :2017年8月2日 下午4:25:51 * 
 */ 
 package aes.aes128;
-import aes.aes128.JiaMi;
 public class JiamiTest {
 	public static void main(String[]args) {
 		String content = "test";  

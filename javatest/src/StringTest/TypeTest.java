@@ -1,4 +1,4 @@
-package StringTest;
+package stringTest;
 
 
 public class TypeTest {

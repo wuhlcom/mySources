@@ -1,40 +1,40 @@
-package Region;
+package region;
 import java.util.List;
 
 /*
- * Î§À¸µãÅÐ¶ÏÀà
+ * Î§ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½
  */
 public class AnalysisPointAndRegion {
 	private static double _dis =  0.0000000001;
 	
 	public static Boolean judgeMeetPoint(AyPoint ap,List<AyPoint> apl){
-		//¼ì²âµãÎª¿Õ»òÎ§À¸Îª¿Õ£¬·µ»Øfalse
+		//ï¿½ï¿½ï¿½ï¿½Îªï¿½Õ»ï¿½Î§ï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½false
 		if(ap == null || apl == null) return false;
-		//¼ì²âÎ§À¸Êý×é
+		//ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int len = apl.size();
 		if(len <3) return false;
-		//½»µãÊý
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int meetPointCount = 0;
-		//Î§À¸ÅÐ¶Ï
+		//Î§ï¿½ï¿½ï¿½Ð¶ï¿½
 		for(int k = 1 ; k < len; k++){
 			AyPoint p1 = apl.get(k);
 			AyPoint p2 = apl.get(k-1);
-			//³õ²½ÅÐ¶Ï ´ó·¶Î§¹ýÂË
-			if(    (ap.getX() > p1.getX() || ap.getX() < p2.getX() || (ap.getX() > p1.getX() || ap.getX() < p2.getX()))//x×ø±êÔÚ¶¥µãÏß¶Î·¶Î§Íâ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½
+			if(    (ap.getX() > p1.getX() || ap.getX() < p2.getX() || (ap.getX() > p1.getX() || ap.getX() < p2.getX()))//xï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ß¶Î·ï¿½Î§ï¿½ï¿½
 					|| (ap.getY() < p1.getY() && ap.getY() < p2.getY()))
 					continue;
 			/*
-			 * ¼ì²âµãÔÚÏß¶Î·¶Î§ÄÚ£¬½øÐÐ½»µã¼ÆËã
+			 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶Î·ï¿½Î§ï¿½Ú£ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			 */
-			//µãÔÚÏßÉÏ£¬ÈÏÎªÔÚÎ§À¸ÄÚ£¬Ôò¿É·µ»ØtrueÁË
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Îªï¿½ï¿½Î§ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½É·ï¿½ï¿½ï¿½trueï¿½ï¿½
 			if(judgePointInLine(p1,p2,ap))
 				return true;
-			//´¦ÀíÌØÊâÇé¿ö£¬½»µãÊÇ¶ËµãµÄÇé¿ö 
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶Ëµï¿½ï¿½ï¿½ï¿½ï¿½ 
 			double temp;
-			//tempÏàµ±ÓÚ±»³ýÊý(Ð±ÂÊµÄ·ÖÄ¸)
+			//tempï¿½àµ±ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½(Ð±ï¿½ÊµÄ·ï¿½Ä¸)
 			temp = p1.getX() - p2.getX();
 			if (temp >= -_dis && temp <= _dis){
-				//´¦Àí½»µãÇé¿ö 
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
                 double dx = ap.getX() - p1.getX();                                
                 if(dx < -_dis || dx > _dis) continue;
                 
@@ -70,7 +70,7 @@ public class AnalysisPointAndRegion {
             	meetPtY = kk * ap.getX() + bb;
             	meetPtX = ap.getX();
             	
-            	//´¦ÀíÌØÊâÇé¿ö£¬½»µãÊÇ¶ËµãµÄÇé¿ö             	
+            	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶Ëµï¿½ï¿½ï¿½ï¿½ï¿½             	
                 double dx = meetPtX - p1.getX();
                 double dy = meetPtY - p1.getY();
                 double dx2 = meetPtX - p2.getX();
@@ -83,7 +83,7 @@ public class AnalysisPointAndRegion {
                 	}else{
                 		p3 = apl.get(k - 2);
                 	}
-                	//ÌáÈ¡½»µãµÄÉÏÏÂÁ½µã·Ö±ðÔÚ´¹ÏßµÄÁ½²à
+                	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Ú´ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½
                 	if( (ap.getY() > meetPtY)
                 		&& ((meetPtX >= p3.getY() && meetPtX <= p2.getX())
                 			|| (meetPtX >= p2.getX() && meetPtX <= p3.getX())
@@ -104,9 +104,9 @@ public class AnalysisPointAndRegion {
 	}
 	
 	/*
-	 * ¼ì²âµãÊÇ·ñÔÚÏßÉÏ
-	 * ap1ºÍap2ÊÇ¶¥µã
-	 * apÊÇ´ý¼ì²âµã
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ap1ï¿½ï¿½ap2ï¿½Ç¶ï¿½ï¿½ï¿½
+	 * apï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private static Boolean judgePointInLine(AyPoint ap1,AyPoint ap2,AyPoint ap){
 		double dx1 = getDistance(ap1, ap2);
@@ -122,7 +122,7 @@ public class AnalysisPointAndRegion {
 	}
 	
 	/*
-	 * ÇóÈ¡Á½µãÖ®¼äµÄ¾àÀë 
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ 
 	 */
 	private static double getDistance(AyPoint ap1,AyPoint ap2){
 		double x = ap1.getX() - ap2.getX();
@@ -140,7 +140,7 @@ public class AnalysisPointAndRegion {
 	}
 	
 	/*
-	 * ÔÚÁ´±íÖÐ»ñÈ¡xÖá²»ÏàÍ¬µÄµã 
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½È¡xï¿½á²»ï¿½ï¿½Í¬ï¿½Äµï¿½ 
 	 */
 	private static int[] getNotSame(List<AyPoint> pts,int index){
 		int[] indexs = new int[2];
